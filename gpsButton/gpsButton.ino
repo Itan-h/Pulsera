@@ -38,6 +38,7 @@ void loop()
 void sendDataButton()
 {
     state = digitalRead(button);
+    delay(100);
     if(state != 0){
         valor++;
     }
@@ -54,6 +55,6 @@ void sendDataGps(void)
     }
     else
     {
-        SerialBT.println("Sin señal gps");  
+        SerialBT.print("Sinsenalgps_");  
     }  
 }
