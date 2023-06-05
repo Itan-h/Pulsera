@@ -3,7 +3,7 @@ from twilio.rest import Client
 from baseDatos import Mostrar
 import time, serial, threading
 
-def proceso(ubi, tel):
+def proceso(ubi, tel):#Función para el subproceso
     i=0
     while(True):
         geolocalization=Nominatim(user_agent="equipo3")#identificarse para usar
@@ -40,8 +40,9 @@ selector = int(valores[1])
 ubicación = valores[0]
 #print(ubicación)
 
-hilo1=threading.Thread(target=proceso, args=(ubicación, telefono), daemon=True)
+hilo1=threading.Thread(target=proceso, args=(ubicación, telefono), daemon=True)#Hilo
 
+#Condiciones y acciones de los procesos
 while(selector<1):
     entrada = puerto.readline().decode('ascii').strip()
     valores = entrada.split("_")
