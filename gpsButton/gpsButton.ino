@@ -51,10 +51,12 @@ void sendDataGps(void)
 { 
     if (gps.location.isValid() ==  1)
     {  
+        delay(100);
         SerialBT.print(String(gps.location.lat(),6)+","+String(gps.location.lng(),6) + "_");
     }
     else
-    {
+    {   
+        delay(100);
         SerialBT.print("Sinsenalgps_");  
     }  
 }
